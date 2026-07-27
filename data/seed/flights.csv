@@ -1,0 +1,231 @@
+flight_id,airline,origin,destination,departure_date,return_date,price,available_seats,class
+FL0001,Globe Wings,New York,Tokyo,2026-10-22,2026-11-05,620.86,24,economy
+FL0002,Globe Wings,London,Tokyo,2026-10-11,2026-10-16,628.76,6,economy
+FL0003,TransWorld Demo,Delhi,Tokyo,2026-10-03,2026-10-13,505.48,31,economy
+FL0004,Globe Wings,Singapore,Tokyo,2026-10-22,2026-10-27,850.01,11,economy
+FL0005,Demo Air,Dubai,Tokyo,2026-10-01,2026-10-11,486.75,5,economy
+FL0006,Horizon Jet,Frankfurt,Tokyo,2026-10-26,2026-11-01,710.62,23,economy
+FL0007,SkyBridge Airlines,San Francisco,Tokyo,2026-10-04,2026-10-16,347.83,2,economy
+FL0008,SkyBridge Airlines,Los Angeles,Tokyo,2026-10-28,2026-11-11,463.22,59,economy
+FL0009,Globe Wings,Paris,Tokyo,2026-10-25,2026-11-02,3154.37,47,business
+FL0010,Continental Star,Toronto,Tokyo,2026-10-06,2026-10-11,1131.05,47,business
+FL0011,Demo Air,New York,Kyoto,2026-10-20,2026-10-26,524.52,19,economy
+FL0012,Continental Star,London,Kyoto,2026-10-06,2026-10-14,899.02,15,economy
+FL0013,SkyBridge Airlines,Delhi,Kyoto,2026-10-15,2026-10-22,914.61,30,economy
+FL0014,Horizon Jet,Singapore,Kyoto,2026-10-08,2026-10-18,358.23,25,economy
+FL0015,Continental Star,Dubai,Kyoto,2026-10-14,2026-10-24,658.02,57,economy
+FL0016,Demo Air,San Francisco,Kyoto,2026-10-28,2026-11-05,461.76,50,economy
+FL0017,TransWorld Demo,Chicago,Kyoto,2026-10-06,2026-10-12,881.28,53,economy
+FL0018,SkyBridge Airlines,Sydney,Kyoto,2026-10-27,2026-11-10,495.9,26,economy
+FL0019,AeroLink,Paris,Kyoto,2026-10-10,2026-10-16,1139.82,19,business
+FL0020,Demo Air,Frankfurt,Kyoto,2026-10-28,2026-11-11,1399.09,55,premium_economy
+FL0021,Horizon Jet,New York,Osaka,2026-10-15,2026-10-23,720.44,59,economy
+FL0022,Globe Wings,London,Osaka,2026-10-21,2026-11-02,485.6,25,economy
+FL0023,Globe Wings,Delhi,Osaka,2026-10-15,2026-10-20,543.0,38,economy
+FL0024,Pacific Blue Demo,Singapore,Osaka,2026-10-21,2026-11-02,650.47,60,economy
+FL0025,Horizon Jet,Dubai,Osaka,2026-10-27,2026-11-01,774.4,35,economy
+FL0026,TransWorld Demo,Chicago,Osaka,2026-10-17,2026-10-24,607.4,50,economy
+FL0027,Demo Air,Frankfurt,Osaka,2026-10-16,2026-10-28,337.44,59,economy
+FL0028,Continental Star,Paris,Osaka,2026-10-27,2026-11-04,401.5,30,economy
+FL0029,Demo Air,San Francisco,Osaka,2026-10-05,2026-10-19,2711.78,49,business
+FL0030,Continental Star,Los Angeles,Osaka,2026-10-23,2026-10-30,757.34,31,premium_economy
+FL0031,TransWorld Demo,New York,Paris,2026-10-20,2026-10-25,371.95,51,economy
+FL0032,Demo Air,London,Paris,2026-10-17,2026-10-29,550.31,34,economy
+FL0033,TransWorld Demo,Delhi,Paris,2026-10-15,2026-10-21,628.27,39,economy
+FL0034,Continental Star,Singapore,Paris,2026-10-12,2026-10-20,931.54,24,economy
+FL0035,SkyBridge Airlines,Dubai,Paris,2026-10-20,2026-11-03,466.67,24,economy
+FL0036,Demo Air,Toronto,Paris,2026-10-04,2026-10-09,671.73,7,economy
+FL0037,Demo Air,Los Angeles,Paris,2026-10-16,2026-10-21,846.75,40,economy
+FL0038,Demo Air,Sydney,Paris,2026-10-25,2026-11-02,621.59,50,economy
+FL0039,Continental Star,Frankfurt,Paris,2026-10-12,2026-10-17,1724.29,3,premium_economy
+FL0040,Globe Wings,San Francisco,Paris,2026-10-20,2026-10-25,1563.57,30,business
+FL0041,Pacific Blue Demo,New York,Nice,2026-10-21,2026-10-27,380.69,23,economy
+FL0042,Horizon Jet,London,Nice,2026-10-10,2026-10-20,486.87,51,economy
+FL0043,Globe Wings,Delhi,Nice,2026-10-19,2026-10-25,382.99,54,economy
+FL0044,Globe Wings,Singapore,Nice,2026-10-02,2026-10-07,459.97,48,economy
+FL0045,Continental Star,Dubai,Nice,2026-10-19,2026-10-25,920.34,46,economy
+FL0046,Pacific Blue Demo,Chicago,Nice,2026-10-27,2026-11-06,527.37,31,economy
+FL0047,Horizon Jet,Sydney,Nice,2026-10-27,2026-11-10,614.09,27,economy
+FL0048,SkyBridge Airlines,Paris,Nice,2026-10-21,2026-11-04,544.98,21,economy
+FL0049,TransWorld Demo,Los Angeles,Nice,2026-10-01,2026-10-13,1953.41,18,business
+FL0050,AeroLink,San Francisco,Nice,2026-10-10,2026-10-15,1483.14,38,business
+FL0051,SkyBridge Airlines,New York,London,2026-10-01,2026-10-11,1035.86,52,economy
+FL0052,AeroLink,Delhi,London,2026-10-16,2026-10-23,870.35,4,economy
+FL0053,AeroLink,Singapore,London,2026-10-09,2026-10-19,578.29,27,economy
+FL0054,Continental Star,Dubai,London,2026-10-25,2026-11-04,610.0,18,economy
+FL0055,TransWorld Demo,Chicago,London,2026-10-08,2026-10-22,1043.81,7,economy
+FL0056,SkyBridge Airlines,Los Angeles,London,2026-10-19,2026-10-24,951.89,33,economy
+FL0057,Continental Star,Frankfurt,London,2026-10-03,2026-10-08,558.93,60,economy
+FL0058,Horizon Jet,San Francisco,London,2026-10-17,2026-10-22,566.12,54,economy
+FL0059,Demo Air,Toronto,London,2026-10-21,2026-10-31,2751.11,47,business
+FL0060,AeroLink,Paris,London,2026-10-14,2026-10-21,2677.82,47,business
+FL0061,SkyBridge Airlines,New York,Edinburgh,2026-10-10,2026-10-15,892.19,9,economy
+FL0062,Horizon Jet,London,Edinburgh,2026-10-02,2026-10-12,694.44,5,economy
+FL0063,Pacific Blue Demo,Delhi,Edinburgh,2026-10-22,2026-11-03,378.28,43,economy
+FL0064,TransWorld Demo,Singapore,Edinburgh,2026-10-14,2026-10-26,1091.47,18,economy
+FL0065,Globe Wings,Dubai,Edinburgh,2026-10-12,2026-10-17,1007.72,20,economy
+FL0066,Horizon Jet,Toronto,Edinburgh,2026-10-24,2026-10-29,477.23,11,economy
+FL0067,SkyBridge Airlines,Frankfurt,Edinburgh,2026-10-17,2026-10-25,852.35,33,economy
+FL0068,TransWorld Demo,Sydney,Edinburgh,2026-10-19,2026-10-26,965.31,55,economy
+FL0069,Continental Star,San Francisco,Edinburgh,2026-10-08,2026-10-18,1985.52,42,business
+FL0070,AeroLink,Chicago,Edinburgh,2026-10-01,2026-10-07,2022.77,45,premium_economy
+FL0071,AeroLink,London,New York,2026-10-22,2026-11-05,1052.46,29,economy
+FL0072,Continental Star,Delhi,New York,2026-10-28,2026-11-09,914.58,43,economy
+FL0073,TransWorld Demo,Singapore,New York,2026-10-07,2026-10-13,964.39,11,economy
+FL0074,AeroLink,Dubai,New York,2026-10-24,2026-10-31,973.76,8,economy
+FL0075,Continental Star,Sydney,New York,2026-10-04,2026-10-12,1089.13,50,economy
+FL0076,Horizon Jet,Frankfurt,New York,2026-10-23,2026-11-04,477.75,42,economy
+FL0077,Demo Air,Chicago,New York,2026-10-12,2026-10-19,946.64,45,economy
+FL0078,TransWorld Demo,Paris,New York,2026-10-18,2026-10-30,752.73,20,economy
+FL0079,Horizon Jet,Toronto,New York,2026-10-10,2026-10-20,793.1,60,premium_economy
+FL0080,Pacific Blue Demo,San Francisco,New York,2026-10-10,2026-10-18,1674.32,37,business
+FL0081,AeroLink,New York,San Francisco,2026-10-14,2026-10-21,996.03,18,economy
+FL0082,TransWorld Demo,London,San Francisco,2026-10-05,2026-10-11,519.49,16,economy
+FL0083,SkyBridge Airlines,Delhi,San Francisco,2026-10-07,2026-10-14,869.07,36,economy
+FL0084,Globe Wings,Singapore,San Francisco,2026-10-26,2026-11-05,1076.43,30,economy
+FL0085,Pacific Blue Demo,Dubai,San Francisco,2026-10-27,2026-11-06,418.0,57,economy
+FL0086,Horizon Jet,Frankfurt,San Francisco,2026-10-13,2026-10-18,843.26,8,economy
+FL0087,AeroLink,Sydney,San Francisco,2026-10-13,2026-10-23,785.99,26,economy
+FL0088,Continental Star,Chicago,San Francisco,2026-10-09,2026-10-17,438.55,5,economy
+FL0089,Horizon Jet,Los Angeles,San Francisco,2026-10-28,2026-11-11,1744.75,37,premium_economy
+FL0090,Demo Air,Toronto,San Francisco,2026-10-01,2026-10-06,1902.25,59,premium_economy
+FL0091,Globe Wings,New York,Rome,2026-10-27,2026-11-08,360.32,60,economy
+FL0092,Pacific Blue Demo,London,Rome,2026-10-22,2026-11-03,740.11,13,economy
+FL0093,TransWorld Demo,Delhi,Rome,2026-10-06,2026-10-20,869.39,2,economy
+FL0094,Globe Wings,Singapore,Rome,2026-10-21,2026-10-27,449.34,21,economy
+FL0095,SkyBridge Airlines,Dubai,Rome,2026-10-24,2026-11-07,529.82,33,economy
+FL0096,AeroLink,Chicago,Rome,2026-10-10,2026-10-18,373.53,45,economy
+FL0097,Continental Star,Los Angeles,Rome,2026-10-01,2026-10-08,330.93,49,economy
+FL0098,Demo Air,San Francisco,Rome,2026-10-15,2026-10-23,486.43,11,economy
+FL0099,Continental Star,Frankfurt,Rome,2026-10-28,2026-11-02,686.14,43,premium_economy
+FL0100,TransWorld Demo,Toronto,Rome,2026-10-17,2026-10-29,2188.49,3,business
+FL0101,Horizon Jet,New York,Venice,2026-10-16,2026-10-21,342.2,26,economy
+FL0102,TransWorld Demo,London,Venice,2026-10-18,2026-10-25,887.39,37,economy
+FL0103,AeroLink,Delhi,Venice,2026-10-10,2026-10-16,737.14,5,economy
+FL0104,TransWorld Demo,Singapore,Venice,2026-10-17,2026-10-25,859.91,3,economy
+FL0105,SkyBridge Airlines,Dubai,Venice,2026-10-17,2026-10-31,559.42,42,economy
+FL0106,AeroLink,Chicago,Venice,2026-10-17,2026-10-24,850.45,55,economy
+FL0107,AeroLink,San Francisco,Venice,2026-10-10,2026-10-16,486.26,55,economy
+FL0108,Pacific Blue Demo,Paris,Venice,2026-10-06,2026-10-13,878.63,26,economy
+FL0109,Pacific Blue Demo,Sydney,Venice,2026-10-18,2026-11-01,2437.62,29,business
+FL0110,SkyBridge Airlines,Toronto,Venice,2026-10-01,2026-10-09,800.5,2,premium_economy
+FL0111,Horizon Jet,New York,Barcelona,2026-10-18,2026-10-26,323.88,31,economy
+FL0112,Continental Star,London,Barcelona,2026-10-12,2026-10-24,808.13,49,economy
+FL0113,AeroLink,Delhi,Barcelona,2026-10-14,2026-10-26,488.55,35,economy
+FL0114,Pacific Blue Demo,Singapore,Barcelona,2026-10-13,2026-10-19,515.04,32,economy
+FL0115,AeroLink,Dubai,Barcelona,2026-10-10,2026-10-17,393.97,5,economy
+FL0116,Pacific Blue Demo,Los Angeles,Barcelona,2026-10-23,2026-11-04,598.89,21,economy
+FL0117,Demo Air,Paris,Barcelona,2026-10-26,2026-10-31,309.52,36,economy
+FL0118,AeroLink,San Francisco,Barcelona,2026-10-19,2026-10-24,698.59,57,economy
+FL0119,Continental Star,Sydney,Barcelona,2026-10-01,2026-10-13,2788.08,54,business
+FL0120,Globe Wings,Frankfurt,Barcelona,2026-10-24,2026-11-07,2412.42,54,business
+FL0121,Globe Wings,New York,Madrid,2026-10-19,2026-10-24,428.56,37,economy
+FL0122,Pacific Blue Demo,London,Madrid,2026-10-28,2026-11-03,508.36,43,economy
+FL0123,AeroLink,Delhi,Madrid,2026-10-27,2026-11-06,637.54,12,economy
+FL0124,SkyBridge Airlines,Singapore,Madrid,2026-10-16,2026-10-24,432.18,25,economy
+FL0125,Demo Air,Dubai,Madrid,2026-10-04,2026-10-16,738.21,18,economy
+FL0126,Continental Star,Sydney,Madrid,2026-10-19,2026-10-25,823.12,53,economy
+FL0127,Globe Wings,Paris,Madrid,2026-10-07,2026-10-17,789.97,34,economy
+FL0128,Pacific Blue Demo,Frankfurt,Madrid,2026-10-09,2026-10-17,862.14,36,economy
+FL0129,Horizon Jet,San Francisco,Madrid,2026-10-21,2026-11-04,548.63,4,premium_economy
+FL0130,SkyBridge Airlines,Los Angeles,Madrid,2026-10-22,2026-11-05,890.37,7,premium_economy
+FL0131,Pacific Blue Demo,New York,Singapore,2026-10-20,2026-10-30,381.97,23,economy
+FL0132,Pacific Blue Demo,London,Singapore,2026-10-22,2026-10-29,659.37,26,economy
+FL0133,Continental Star,Delhi,Singapore,2026-10-08,2026-10-14,927.85,47,economy
+FL0134,Demo Air,Dubai,Singapore,2026-10-28,2026-11-03,1039.66,27,economy
+FL0135,Globe Wings,San Francisco,Singapore,2026-10-17,2026-10-23,838.76,5,economy
+FL0136,AeroLink,Frankfurt,Singapore,2026-10-12,2026-10-17,1052.6,20,economy
+FL0137,TransWorld Demo,Chicago,Singapore,2026-10-15,2026-10-27,633.76,34,economy
+FL0138,TransWorld Demo,Paris,Singapore,2026-10-14,2026-10-28,944.82,26,economy
+FL0139,Globe Wings,Toronto,Singapore,2026-10-21,2026-10-29,1598.82,21,business
+FL0140,Pacific Blue Demo,Los Angeles,Singapore,2026-10-05,2026-10-19,2683.61,60,business
+FL0141,TransWorld Demo,New York,Bangkok,2026-10-02,2026-10-16,210.03,7,economy
+FL0142,Globe Wings,London,Bangkok,2026-10-25,2026-11-08,403.14,21,economy
+FL0143,Pacific Blue Demo,Delhi,Bangkok,2026-10-25,2026-11-02,433.42,27,economy
+FL0144,AeroLink,Singapore,Bangkok,2026-10-11,2026-10-16,429.93,59,economy
+FL0145,Continental Star,Dubai,Bangkok,2026-10-01,2026-10-06,332.84,47,economy
+FL0146,Continental Star,Toronto,Bangkok,2026-10-12,2026-10-18,181.02,18,economy
+FL0147,SkyBridge Airlines,Sydney,Bangkok,2026-10-03,2026-10-13,282.17,5,economy
+FL0148,TransWorld Demo,Chicago,Bangkok,2026-10-03,2026-10-10,362.88,46,economy
+FL0149,Continental Star,Los Angeles,Bangkok,2026-10-25,2026-10-31,1669.58,3,business
+FL0150,Demo Air,Paris,Bangkok,2026-10-19,2026-10-24,1274.6,37,business
+FL0151,Horizon Jet,New York,Phuket,2026-10-27,2026-11-06,306.49,6,economy
+FL0152,Globe Wings,London,Phuket,2026-10-08,2026-10-16,447.46,54,economy
+FL0153,Horizon Jet,Delhi,Phuket,2026-10-21,2026-11-04,340.42,13,economy
+FL0154,TransWorld Demo,Singapore,Phuket,2026-10-22,2026-10-30,369.03,7,economy
+FL0155,Demo Air,Dubai,Phuket,2026-10-13,2026-10-25,233.41,3,economy
+FL0156,Horizon Jet,Toronto,Phuket,2026-10-28,2026-11-02,418.13,50,economy
+FL0157,AeroLink,Paris,Phuket,2026-10-11,2026-10-21,368.2,33,economy
+FL0158,SkyBridge Airlines,Sydney,Phuket,2026-10-11,2026-10-25,436.02,30,economy
+FL0159,Globe Wings,Chicago,Phuket,2026-10-04,2026-10-10,658.64,38,premium_economy
+FL0160,TransWorld Demo,San Francisco,Phuket,2026-10-12,2026-10-26,1403.63,36,business
+FL0161,Continental Star,New York,Sydney,2026-10-05,2026-10-15,732.97,31,economy
+FL0162,Horizon Jet,London,Sydney,2026-10-20,2026-11-01,433.57,43,economy
+FL0163,Demo Air,Delhi,Sydney,2026-10-17,2026-10-31,414.5,42,economy
+FL0164,TransWorld Demo,Singapore,Sydney,2026-10-11,2026-10-17,481.77,34,economy
+FL0165,Pacific Blue Demo,Dubai,Sydney,2026-10-15,2026-10-21,1064.05,35,economy
+FL0166,TransWorld Demo,Los Angeles,Sydney,2026-10-18,2026-10-24,408.79,54,economy
+FL0167,Continental Star,San Francisco,Sydney,2026-10-03,2026-10-13,465.38,17,economy
+FL0168,AeroLink,Paris,Sydney,2026-10-08,2026-10-15,975.81,59,economy
+FL0169,AeroLink,Chicago,Sydney,2026-10-04,2026-10-14,2921.0,11,business
+FL0170,SkyBridge Airlines,Toronto,Sydney,2026-10-07,2026-10-12,1767.77,15,business
+FL0171,AeroLink,New York,Melbourne,2026-10-06,2026-10-12,970.65,18,economy
+FL0172,Horizon Jet,London,Melbourne,2026-10-01,2026-10-06,891.51,16,economy
+FL0173,AeroLink,Delhi,Melbourne,2026-10-06,2026-10-20,776.2,48,economy
+FL0174,Globe Wings,Singapore,Melbourne,2026-10-05,2026-10-13,928.12,15,economy
+FL0175,Horizon Jet,Dubai,Melbourne,2026-10-26,2026-11-05,530.1,58,economy
+FL0176,Globe Wings,Los Angeles,Melbourne,2026-10-05,2026-10-15,742.43,33,economy
+FL0177,Horizon Jet,Sydney,Melbourne,2026-10-02,2026-10-16,943.32,26,economy
+FL0178,AeroLink,Paris,Melbourne,2026-10-16,2026-10-30,726.93,20,economy
+FL0179,Continental Star,Toronto,Melbourne,2026-10-27,2026-11-01,2037.56,60,business
+FL0180,Continental Star,San Francisco,Melbourne,2026-10-12,2026-10-26,1678.73,28,premium_economy
+FL0181,Pacific Blue Demo,New York,Dubai,2026-10-20,2026-11-01,1014.57,33,economy
+FL0182,Globe Wings,London,Dubai,2026-10-04,2026-10-12,612.4,29,economy
+FL0183,Continental Star,Delhi,Dubai,2026-10-10,2026-10-20,686.95,41,economy
+FL0184,AeroLink,Singapore,Dubai,2026-10-08,2026-10-16,782.91,26,economy
+FL0185,Globe Wings,Sydney,Dubai,2026-10-11,2026-10-21,735.45,11,economy
+FL0186,Pacific Blue Demo,Los Angeles,Dubai,2026-10-23,2026-10-28,1032.35,37,economy
+FL0187,Demo Air,Toronto,Dubai,2026-10-03,2026-10-08,942.65,7,economy
+FL0188,Continental Star,Paris,Dubai,2026-10-15,2026-10-27,641.47,21,economy
+FL0189,TransWorld Demo,Chicago,Dubai,2026-10-19,2026-10-25,1611.83,11,premium_economy
+FL0190,Demo Air,San Francisco,Dubai,2026-10-03,2026-10-11,1127.86,29,premium_economy
+FL0191,SkyBridge Airlines,New York,Abu Dhabi,2026-10-10,2026-10-16,558.79,35,economy
+FL0192,Pacific Blue Demo,London,Abu Dhabi,2026-10-02,2026-10-14,706.7,9,economy
+FL0193,Horizon Jet,Delhi,Abu Dhabi,2026-10-18,2026-10-24,1035.17,45,economy
+FL0194,TransWorld Demo,Singapore,Abu Dhabi,2026-10-10,2026-10-18,575.96,47,economy
+FL0195,Globe Wings,Dubai,Abu Dhabi,2026-10-04,2026-10-12,999.21,60,economy
+FL0196,AeroLink,Toronto,Abu Dhabi,2026-10-27,2026-11-03,948.29,14,economy
+FL0197,Globe Wings,Los Angeles,Abu Dhabi,2026-10-19,2026-10-29,829.38,57,economy
+FL0198,Pacific Blue Demo,Chicago,Abu Dhabi,2026-10-28,2026-11-05,987.16,34,economy
+FL0199,Continental Star,Sydney,Abu Dhabi,2026-10-02,2026-10-10,761.42,16,premium_economy
+FL0200,Continental Star,San Francisco,Abu Dhabi,2026-10-16,2026-10-23,2698.08,42,business
+FL0201,TransWorld Demo,New York,Delhi,2026-10-25,2026-10-30,305.05,8,economy
+FL0202,Horizon Jet,London,Delhi,2026-10-27,2026-11-06,476.76,59,economy
+FL0203,Globe Wings,Singapore,Delhi,2026-10-09,2026-10-14,377.07,57,economy
+FL0204,Continental Star,Dubai,Delhi,2026-10-16,2026-10-24,209.82,55,economy
+FL0205,SkyBridge Airlines,San Francisco,Delhi,2026-10-10,2026-10-15,318.23,18,economy
+FL0206,TransWorld Demo,Chicago,Delhi,2026-10-24,2026-11-01,320.1,31,economy
+FL0207,Demo Air,Los Angeles,Delhi,2026-10-08,2026-10-20,188.96,43,economy
+FL0208,Continental Star,Frankfurt,Delhi,2026-10-17,2026-10-24,472.19,55,economy
+FL0209,Demo Air,Sydney,Delhi,2026-10-01,2026-10-09,1168.67,15,business
+FL0210,Pacific Blue Demo,Paris,Delhi,2026-10-27,2026-11-08,1404.44,10,business
+FL0211,Pacific Blue Demo,New York,Jaipur,2026-10-07,2026-10-21,258.34,3,economy
+FL0212,Horizon Jet,London,Jaipur,2026-10-23,2026-10-31,328.3,53,economy
+FL0213,Pacific Blue Demo,Delhi,Jaipur,2026-10-18,2026-11-01,331.53,35,economy
+FL0214,TransWorld Demo,Singapore,Jaipur,2026-10-21,2026-10-31,393.35,25,economy
+FL0215,Horizon Jet,Dubai,Jaipur,2026-10-16,2026-10-28,276.79,46,economy
+FL0216,Horizon Jet,Los Angeles,Jaipur,2026-10-20,2026-10-26,478.15,38,economy
+FL0217,Demo Air,Paris,Jaipur,2026-10-14,2026-10-26,305.44,29,economy
+FL0218,AeroLink,Frankfurt,Jaipur,2026-10-08,2026-10-22,330.03,43,economy
+FL0219,Continental Star,Toronto,Jaipur,2026-10-06,2026-10-14,777.62,9,business
+FL0220,AeroLink,San Francisco,Jaipur,2026-10-19,2026-10-26,535.72,58,premium_economy
+FL0221,TransWorld Demo,New York,Mumbai,2026-10-03,2026-10-09,422.22,23,economy
+FL0222,Demo Air,London,Mumbai,2026-10-15,2026-10-23,468.15,41,economy
+FL0223,Pacific Blue Demo,Delhi,Mumbai,2026-10-07,2026-10-15,410.73,59,economy
+FL0224,Demo Air,Singapore,Mumbai,2026-10-22,2026-10-28,349.43,16,economy
+FL0225,Continental Star,Dubai,Mumbai,2026-10-28,2026-11-11,475.33,58,economy
+FL0226,AeroLink,San Francisco,Mumbai,2026-10-08,2026-10-14,247.1,19,economy
+FL0227,Continental Star,Chicago,Mumbai,2026-10-17,2026-10-25,280.78,21,economy
+FL0228,Demo Air,Los Angeles,Mumbai,2026-10-09,2026-10-14,202.13,30,economy
+FL0229,Horizon Jet,Toronto,Mumbai,2026-10-23,2026-11-02,1128.38,49,business
+FL0230,Globe Wings,Sydney,Mumbai,2026-10-20,2026-11-01,923.16,16,business

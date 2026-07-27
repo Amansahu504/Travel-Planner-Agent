@@ -1,0 +1,185 @@
+activity_id,destination,activity_name,category,price,duration,rating
+AC0001,Tokyo,Street food tasting tour in Tokyo,food,74.28,3 hours,4.2
+AC0002,Tokyo,Museum and gallery pass in Tokyo,culture,33.14,4 hours,4.6
+AC0003,Tokyo,Guided city walking tour in Tokyo,sightseeing,58.05,3 hours,4.7
+AC0004,Tokyo,Traditional cultural performance in Tokyo,culture,90.08,2 hours,5.0
+AC0005,Tokyo,Cooking class with local chef in Tokyo,food,110.77,4 hours,4.2
+AC0006,Tokyo,Day trip to nearby town in Tokyo,adventure,183.83,8 hours,4.5
+AC0007,Tokyo,Local market and craft workshop in Tokyo,culture,44.94,3 hours,4.9
+AC0008,Tokyo,River or harbour cruise in Tokyo,leisure,47.7,2 hours,4.9
+AC0009,Kyoto,Street food tasting tour in Kyoto,food,79.92,3 hours,4.4
+AC0010,Kyoto,Local market and craft workshop in Kyoto,culture,61.77,3 hours,4.6
+AC0011,Kyoto,Guided city walking tour in Kyoto,sightseeing,44.86,3 hours,4.8
+AC0012,Kyoto,Sunset viewpoint experience in Kyoto,leisure,14.62,2 hours,4.8
+AC0013,Kyoto,River or harbour cruise in Kyoto,leisure,32.29,2 hours,4.0
+AC0014,Kyoto,Temple and shrine circuit in Kyoto,culture,34.5,4 hours,4.0
+AC0015,Kyoto,Museum and gallery pass in Kyoto,culture,30.64,4 hours,4.9
+AC0016,Kyoto,Cycling tour of the old town in Kyoto,adventure,58.34,3 hours,5.0
+AC0017,Osaka,Cooking class with local chef in Osaka,food,69.57,4 hours,4.6
+AC0018,Osaka,Local market and craft workshop in Osaka,culture,69.45,3 hours,4.6
+AC0019,Osaka,Historic landmark entry in Osaka,sightseeing,24.07,2 hours,4.0
+AC0020,Osaka,Cycling tour of the old town in Osaka,adventure,72.71,3 hours,4.5
+AC0021,Osaka,Sunset viewpoint experience in Osaka,leisure,13.72,2 hours,4.7
+AC0022,Osaka,Traditional cultural performance in Osaka,culture,63.64,2 hours,4.2
+AC0023,Osaka,Guided city walking tour in Osaka,sightseeing,42.3,3 hours,4.4
+AC0024,Osaka,Museum and gallery pass in Osaka,culture,24.43,4 hours,4.8
+AC0025,Paris,Cooking class with local chef in Paris,food,69.25,4 hours,4.5
+AC0026,Paris,Museum and gallery pass in Paris,culture,20.76,4 hours,3.9
+AC0027,Paris,Historic landmark entry in Paris,sightseeing,40.19,2 hours,4.7
+AC0028,Paris,Guided city walking tour in Paris,sightseeing,50.19,3 hours,4.6
+AC0029,Paris,Cycling tour of the old town in Paris,adventure,56.27,3 hours,4.7
+AC0030,Paris,Street food tasting tour in Paris,food,78.11,3 hours,4.4
+AC0031,Paris,Temple and shrine circuit in Paris,culture,40.5,4 hours,4.8
+AC0032,Paris,Local market and craft workshop in Paris,culture,73.02,3 hours,4.8
+AC0033,Nice,Street food tasting tour in Nice,food,42.61,3 hours,4.1
+AC0034,Nice,Museum and gallery pass in Nice,culture,37.55,4 hours,4.9
+AC0035,Nice,Guided city walking tour in Nice,sightseeing,62.38,3 hours,3.9
+AC0036,Nice,Cycling tour of the old town in Nice,adventure,54.82,3 hours,4.9
+AC0037,Nice,Local market and craft workshop in Nice,culture,44.83,3 hours,3.9
+AC0038,Nice,Historic landmark entry in Nice,sightseeing,28.12,2 hours,4.5
+AC0039,Nice,Cooking class with local chef in Nice,food,54.82,4 hours,4.0
+AC0040,Nice,Sunset viewpoint experience in Nice,leisure,23.82,2 hours,4.1
+AC0041,London,Street food tasting tour in London,food,90.3,3 hours,4.0
+AC0042,London,Local market and craft workshop in London,culture,22.2,3 hours,4.5
+AC0043,London,Guided city walking tour in London,sightseeing,56.96,3 hours,4.9
+AC0044,London,Museum and gallery pass in London,culture,18.15,4 hours,5.0
+AC0045,London,Day trip to nearby town in London,adventure,201.0,8 hours,4.8
+AC0046,London,Historic landmark entry in London,sightseeing,13.43,2 hours,4.2
+AC0047,London,Temple and shrine circuit in London,culture,28.36,4 hours,4.3
+AC0048,London,Cooking class with local chef in London,food,68.66,4 hours,4.0
+AC0049,Edinburgh,Cooking class with local chef in Edinburgh,food,68.03,4 hours,4.4
+AC0050,Edinburgh,Museum and gallery pass in Edinburgh,culture,24.01,4 hours,4.9
+AC0051,Edinburgh,Historic landmark entry in Edinburgh,sightseeing,35.98,2 hours,4.8
+AC0052,Edinburgh,Street food tasting tour in Edinburgh,food,42.67,3 hours,4.3
+AC0053,Edinburgh,Temple and shrine circuit in Edinburgh,culture,15.56,4 hours,4.1
+AC0054,Edinburgh,Traditional cultural performance in Edinburgh,culture,41.92,2 hours,4.3
+AC0055,Edinburgh,Cycling tour of the old town in Edinburgh,adventure,32.96,3 hours,4.4
+AC0056,Edinburgh,Local market and craft workshop in Edinburgh,culture,49.02,3 hours,4.3
+AC0057,New York,Cooking class with local chef in New York,food,83.59,4 hours,4.9
+AC0058,New York,Traditional cultural performance in New York,culture,104.8,2 hours,4.1
+AC0059,New York,Historic landmark entry in New York,sightseeing,11.79,2 hours,4.2
+AC0060,New York,Cycling tour of the old town in New York,adventure,59.23,3 hours,4.0
+AC0061,New York,Temple and shrine circuit in New York,culture,28.58,4 hours,3.9
+AC0062,New York,Museum and gallery pass in New York,culture,48.74,4 hours,4.8
+AC0063,New York,Guided city walking tour in New York,sightseeing,38.36,3 hours,4.4
+AC0064,New York,Street food tasting tour in New York,food,41.56,3 hours,4.6
+AC0065,San Francisco,Cooking class with local chef in San Francisco,food,136.48,4 hours,4.5
+AC0066,San Francisco,Traditional cultural performance in San Francisco,culture,54.57,2 hours,3.9
+AC0067,San Francisco,Guided city walking tour in San Francisco,sightseeing,18.91,3 hours,4.8
+AC0068,San Francisco,Day trip to nearby town in San Francisco,adventure,113.0,8 hours,4.8
+AC0069,San Francisco,River or harbour cruise in San Francisco,leisure,57.06,2 hours,4.5
+AC0070,San Francisco,Local market and craft workshop in San Francisco,culture,53.43,3 hours,4.3
+AC0071,San Francisco,Historic landmark entry in San Francisco,sightseeing,36.42,2 hours,4.8
+AC0072,San Francisco,Sunset viewpoint experience in San Francisco,leisure,34.19,2 hours,4.4
+AC0073,Rome,Cooking class with local chef in Rome,food,70.92,4 hours,4.9
+AC0074,Rome,Museum and gallery pass in Rome,culture,25.98,4 hours,4.4
+AC0075,Rome,Guided city walking tour in Rome,sightseeing,32.59,3 hours,4.8
+AC0076,Rome,Day trip to nearby town in Rome,adventure,64.26,8 hours,4.8
+AC0077,Rome,Cycling tour of the old town in Rome,adventure,53.16,3 hours,4.2
+AC0078,Rome,Temple and shrine circuit in Rome,culture,13.41,4 hours,3.9
+AC0079,Rome,River or harbour cruise in Rome,leisure,41.91,2 hours,4.8
+AC0080,Rome,Historic landmark entry in Rome,sightseeing,32.57,2 hours,4.6
+AC0081,Venice,Street food tasting tour in Venice,food,78.9,3 hours,4.9
+AC0082,Venice,Temple and shrine circuit in Venice,culture,40.19,4 hours,4.9
+AC0083,Venice,Historic landmark entry in Venice,sightseeing,32.9,2 hours,4.5
+AC0084,Venice,Museum and gallery pass in Venice,culture,36.55,4 hours,4.6
+AC0085,Venice,Day trip to nearby town in Venice,adventure,92.91,8 hours,4.5
+AC0086,Venice,River or harbour cruise in Venice,leisure,26.96,2 hours,4.4
+AC0087,Venice,Local market and craft workshop in Venice,culture,31.1,3 hours,5.0
+AC0088,Venice,Cooking class with local chef in Venice,food,115.05,4 hours,4.2
+AC0089,Barcelona,Street food tasting tour in Barcelona,food,53.39,3 hours,4.5
+AC0090,Barcelona,Local market and craft workshop in Barcelona,culture,20.98,3 hours,4.3
+AC0091,Barcelona,Historic landmark entry in Barcelona,sightseeing,24.74,2 hours,4.7
+AC0092,Barcelona,Traditional cultural performance in Barcelona,culture,76.74,2 hours,4.3
+AC0093,Barcelona,Cycling tour of the old town in Barcelona,adventure,55.26,3 hours,4.8
+AC0094,Barcelona,Temple and shrine circuit in Barcelona,culture,16.6,4 hours,4.4
+AC0095,Barcelona,Cooking class with local chef in Barcelona,food,102.91,4 hours,4.4
+AC0096,Barcelona,Day trip to nearby town in Barcelona,adventure,130.5,8 hours,4.9
+AC0097,Madrid,Cooking class with local chef in Madrid,food,95.36,4 hours,4.4
+AC0098,Madrid,Temple and shrine circuit in Madrid,culture,43.52,4 hours,5.0
+AC0099,Madrid,Historic landmark entry in Madrid,sightseeing,18.83,2 hours,4.8
+AC0100,Madrid,Street food tasting tour in Madrid,food,24.98,3 hours,4.2
+AC0101,Madrid,Local market and craft workshop in Madrid,culture,35.38,3 hours,4.5
+AC0102,Madrid,Guided city walking tour in Madrid,sightseeing,32.35,3 hours,4.4
+AC0103,Madrid,Day trip to nearby town in Madrid,adventure,119.83,8 hours,4.2
+AC0104,Madrid,Museum and gallery pass in Madrid,culture,30.26,4 hours,4.2
+AC0105,Singapore,Cooking class with local chef in Singapore,food,79.4,4 hours,4.0
+AC0106,Singapore,Traditional cultural performance in Singapore,culture,94.41,2 hours,4.8
+AC0107,Singapore,Guided city walking tour in Singapore,sightseeing,23.03,3 hours,4.6
+AC0108,Singapore,Sunset viewpoint experience in Singapore,leisure,45.13,2 hours,4.6
+AC0109,Singapore,Day trip to nearby town in Singapore,adventure,78.58,8 hours,4.0
+AC0110,Singapore,River or harbour cruise in Singapore,leisure,93.43,2 hours,4.5
+AC0111,Singapore,Local market and craft workshop in Singapore,culture,25.78,3 hours,4.2
+AC0112,Singapore,Street food tasting tour in Singapore,food,98.93,3 hours,4.4
+AC0113,Bangkok,Cooking class with local chef in Bangkok,food,70.75,4 hours,4.3
+AC0114,Bangkok,Temple and shrine circuit in Bangkok,culture,10.43,4 hours,3.9
+AC0115,Bangkok,Historic landmark entry in Bangkok,sightseeing,20.98,2 hours,3.9
+AC0116,Bangkok,Traditional cultural performance in Bangkok,culture,33.48,2 hours,4.4
+AC0117,Bangkok,Street food tasting tour in Bangkok,food,20.38,3 hours,4.7
+AC0118,Bangkok,Day trip to nearby town in Bangkok,adventure,83.68,8 hours,4.7
+AC0119,Bangkok,Guided city walking tour in Bangkok,sightseeing,17.91,3 hours,4.9
+AC0120,Bangkok,Museum and gallery pass in Bangkok,culture,13.88,4 hours,4.8
+AC0121,Phuket,Street food tasting tour in Phuket,food,39.85,3 hours,4.9
+AC0122,Phuket,Temple and shrine circuit in Phuket,culture,15.34,4 hours,4.1
+AC0123,Phuket,Guided city walking tour in Phuket,sightseeing,18.37,3 hours,4.8
+AC0124,Phuket,Historic landmark entry in Phuket,sightseeing,17.19,2 hours,4.6
+AC0125,Phuket,Museum and gallery pass in Phuket,culture,21.93,4 hours,4.1
+AC0126,Phuket,Day trip to nearby town in Phuket,adventure,57.52,8 hours,4.0
+AC0127,Phuket,Sunset viewpoint experience in Phuket,leisure,25.34,2 hours,4.0
+AC0128,Phuket,Cycling tour of the old town in Phuket,adventure,34.3,3 hours,4.7
+AC0129,Sydney,Cooking class with local chef in Sydney,food,99.25,4 hours,4.1
+AC0130,Sydney,Traditional cultural performance in Sydney,culture,78.0,2 hours,4.3
+AC0131,Sydney,Historic landmark entry in Sydney,sightseeing,22.05,2 hours,4.7
+AC0132,Sydney,Day trip to nearby town in Sydney,adventure,153.99,8 hours,4.2
+AC0133,Sydney,Guided city walking tour in Sydney,sightseeing,37.66,3 hours,4.3
+AC0134,Sydney,Museum and gallery pass in Sydney,culture,13.86,4 hours,4.2
+AC0135,Sydney,Local market and craft workshop in Sydney,culture,55.42,3 hours,4.2
+AC0136,Sydney,Street food tasting tour in Sydney,food,37.1,3 hours,4.1
+AC0137,Melbourne,Street food tasting tour in Melbourne,food,75.18,3 hours,4.2
+AC0138,Melbourne,Museum and gallery pass in Melbourne,culture,37.04,4 hours,4.1
+AC0139,Melbourne,Historic landmark entry in Melbourne,sightseeing,39.73,2 hours,4.8
+AC0140,Melbourne,Guided city walking tour in Melbourne,sightseeing,45.58,3 hours,4.1
+AC0141,Melbourne,River or harbour cruise in Melbourne,leisure,39.58,2 hours,4.9
+AC0142,Melbourne,Day trip to nearby town in Melbourne,adventure,133.48,8 hours,4.8
+AC0143,Melbourne,Cooking class with local chef in Melbourne,food,56.76,4 hours,4.6
+AC0144,Melbourne,Cycling tour of the old town in Melbourne,adventure,62.02,3 hours,4.8
+AC0145,Dubai,Cooking class with local chef in Dubai,food,75.53,4 hours,4.9
+AC0146,Dubai,Temple and shrine circuit in Dubai,culture,16.04,4 hours,4.9
+AC0147,Dubai,Historic landmark entry in Dubai,sightseeing,34.89,2 hours,4.2
+AC0148,Dubai,Sunset viewpoint experience in Dubai,leisure,45.11,2 hours,4.5
+AC0149,Dubai,Street food tasting tour in Dubai,food,49.09,3 hours,4.2
+AC0150,Dubai,Guided city walking tour in Dubai,sightseeing,17.89,3 hours,4.5
+AC0151,Dubai,Traditional cultural performance in Dubai,culture,78.91,2 hours,4.4
+AC0152,Dubai,Museum and gallery pass in Dubai,culture,17.31,4 hours,4.1
+AC0153,Abu Dhabi,Street food tasting tour in Abu Dhabi,food,80.0,3 hours,4.1
+AC0154,Abu Dhabi,Local market and craft workshop in Abu Dhabi,culture,28.97,3 hours,4.3
+AC0155,Abu Dhabi,Guided city walking tour in Abu Dhabi,sightseeing,52.08,3 hours,4.8
+AC0156,Abu Dhabi,Cycling tour of the old town in Abu Dhabi,adventure,34.07,3 hours,4.7
+AC0157,Abu Dhabi,Historic landmark entry in Abu Dhabi,sightseeing,31.47,2 hours,4.9
+AC0158,Abu Dhabi,Cooking class with local chef in Abu Dhabi,food,98.66,4 hours,4.2
+AC0159,Abu Dhabi,River or harbour cruise in Abu Dhabi,leisure,96.2,2 hours,4.3
+AC0160,Abu Dhabi,Sunset viewpoint experience in Abu Dhabi,leisure,59.19,2 hours,4.1
+AC0161,Delhi,Cooking class with local chef in Delhi,food,20.14,4 hours,4.3
+AC0162,Delhi,Museum and gallery pass in Delhi,culture,13.47,4 hours,5.0
+AC0163,Delhi,Historic landmark entry in Delhi,sightseeing,7.38,2 hours,4.6
+AC0164,Delhi,River or harbour cruise in Delhi,leisure,27.64,2 hours,4.0
+AC0165,Delhi,Temple and shrine circuit in Delhi,culture,17.44,4 hours,4.3
+AC0166,Delhi,Sunset viewpoint experience in Delhi,leisure,26.1,2 hours,4.9
+AC0167,Delhi,Guided city walking tour in Delhi,sightseeing,24.9,3 hours,4.8
+AC0168,Delhi,Local market and craft workshop in Delhi,culture,13.63,3 hours,4.8
+AC0169,Jaipur,Cooking class with local chef in Jaipur,food,41.84,4 hours,4.7
+AC0170,Jaipur,Museum and gallery pass in Jaipur,culture,20.62,4 hours,4.9
+AC0171,Jaipur,Historic landmark entry in Jaipur,sightseeing,18.8,2 hours,4.4
+AC0172,Jaipur,Sunset viewpoint experience in Jaipur,leisure,8.55,2 hours,4.5
+AC0173,Jaipur,Traditional cultural performance in Jaipur,culture,17.56,2 hours,4.6
+AC0174,Jaipur,River or harbour cruise in Jaipur,leisure,33.09,2 hours,4.8
+AC0175,Jaipur,Temple and shrine circuit in Jaipur,culture,10.98,4 hours,4.8
+AC0176,Jaipur,Local market and craft workshop in Jaipur,culture,9.3,3 hours,4.4
+AC0177,Mumbai,Cooking class with local chef in Mumbai,food,49.21,4 hours,4.3
+AC0178,Mumbai,Museum and gallery pass in Mumbai,culture,7.74,4 hours,4.1
+AC0179,Mumbai,Historic landmark entry in Mumbai,sightseeing,14.76,2 hours,4.1
+AC0180,Mumbai,Sunset viewpoint experience in Mumbai,leisure,26.05,2 hours,4.5
+AC0181,Mumbai,Guided city walking tour in Mumbai,sightseeing,17.27,3 hours,4.8
+AC0182,Mumbai,Street food tasting tour in Mumbai,food,27.88,3 hours,4.2
+AC0183,Mumbai,River or harbour cruise in Mumbai,leisure,22.09,2 hours,4.8
+AC0184,Mumbai,Local market and craft workshop in Mumbai,culture,12.93,3 hours,4.7

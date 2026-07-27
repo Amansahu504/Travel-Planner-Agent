@@ -1,0 +1,185 @@
+hotel_id,hotel_name,destination,rating,price_per_night,available_rooms,category
+HT0001,Tokyo Budget Inn,Tokyo,3.5,58.18,9,budget
+HT0002,Tokyo Value Stay,Tokyo,3.2,91.16,24,budget
+HT0003,Tokyo Backpacker Lodge,Tokyo,3.4,54.04,22,budget
+HT0004,Tokyo Boutique House,Tokyo,4.4,127.77,6,mid-range
+HT0005,Tokyo Central Hotel,Tokyo,4.1,177.42,9,mid-range
+HT0006,Tokyo Plaza Hotel,Tokyo,4.0,174.67,13,mid-range
+HT0007,Tokyo Royal Suites,Tokyo,4.6,503.99,1,luxury
+HT0008,Tokyo Luxury Collection,Tokyo,4.7,542.03,13,luxury
+HT0009,Kyoto Backpacker Lodge,Kyoto,3.6,81.27,16,budget
+HT0010,Kyoto Budget Inn,Kyoto,3.0,72.73,9,budget
+HT0011,Kyoto Traveler's Rest,Kyoto,3.3,64.22,4,budget
+HT0012,Kyoto Boutique House,Kyoto,4.2,143.06,10,mid-range
+HT0013,Kyoto Riverside Hotel,Kyoto,4.5,154.79,23,mid-range
+HT0014,Kyoto Plaza Hotel,Kyoto,4.1,153.77,8,mid-range
+HT0015,Kyoto Luxury Collection,Kyoto,4.8,522.87,23,luxury
+HT0016,Kyoto Grand Palace Hotel,Kyoto,4.5,528.88,12,luxury
+HT0017,Osaka Backpacker Lodge,Osaka,3.5,84.3,20,budget
+HT0018,Osaka City Hostel,Osaka,3.9,92.14,7,budget
+HT0019,Osaka Value Stay,Osaka,3.3,81.11,5,budget
+HT0020,Osaka Riverside Hotel,Osaka,4.0,119.04,4,mid-range
+HT0021,Osaka Garden Hotel,Osaka,4.5,194.47,6,mid-range
+HT0022,Osaka Central Hotel,Osaka,3.8,118.96,25,mid-range
+HT0023,Osaka Royal Suites,Osaka,4.6,578.88,21,luxury
+HT0024,Osaka Luxury Collection,Osaka,4.6,513.34,8,luxury
+HT0025,Paris Backpacker Lodge,Paris,3.4,50.45,22,budget
+HT0026,Paris Budget Inn,Paris,3.9,72.23,14,budget
+HT0027,Paris Value Stay,Paris,3.8,69.8,13,budget
+HT0028,Paris Boutique House,Paris,4.1,142.95,10,mid-range
+HT0029,Paris Riverside Hotel,Paris,4.4,109.17,19,mid-range
+HT0030,Paris Central Hotel,Paris,4.4,178.07,21,mid-range
+HT0031,Paris Royal Suites,Paris,4.7,448.86,1,luxury
+HT0032,Paris Skyline Resort,Paris,4.5,603.15,4,luxury
+HT0033,Nice Value Stay,Nice,3.1,67.8,18,budget
+HT0034,Nice Backpacker Lodge,Nice,4.1,40.07,23,budget
+HT0035,Nice Budget Inn,Nice,3.0,66.02,15,budget
+HT0036,Nice Plaza Hotel,Nice,4.0,130.98,21,mid-range
+HT0037,Nice Central Hotel,Nice,4.0,205.31,8,mid-range
+HT0038,Nice Garden Hotel,Nice,4.4,209.99,21,mid-range
+HT0039,Nice Royal Suites,Nice,4.4,399.13,4,luxury
+HT0040,Nice Grand Palace Hotel,Nice,4.9,370.33,9,luxury
+HT0041,London Value Stay,London,3.1,66.03,10,budget
+HT0042,London Backpacker Lodge,London,3.6,76.53,9,budget
+HT0043,London City Hostel,London,3.1,40.82,10,budget
+HT0044,London Boutique House,London,4.5,110.25,2,mid-range
+HT0045,London Riverside Hotel,London,4.4,159.68,5,mid-range
+HT0046,London Central Hotel,London,4.2,184.61,24,mid-range
+HT0047,London Skyline Resort,London,4.4,336.44,9,luxury
+HT0048,London Grand Palace Hotel,London,4.6,646.34,23,luxury
+HT0049,Edinburgh Backpacker Lodge,Edinburgh,3.2,58.79,17,budget
+HT0050,Edinburgh Budget Inn,Edinburgh,3.2,69.83,13,budget
+HT0051,Edinburgh Traveler's Rest,Edinburgh,3.8,77.51,24,budget
+HT0052,Edinburgh Boutique House,Edinburgh,4.5,141.6,20,mid-range
+HT0053,Edinburgh Plaza Hotel,Edinburgh,4.4,217.84,3,mid-range
+HT0054,Edinburgh Garden Hotel,Edinburgh,4.5,206.28,8,mid-range
+HT0055,Edinburgh Heritage Grand,Edinburgh,4.7,576.88,12,luxury
+HT0056,Edinburgh Royal Suites,Edinburgh,4.6,457.52,13,luxury
+HT0057,New York City Hostel,New York,3.9,104.79,16,budget
+HT0058,New York Traveler's Rest,New York,3.2,46.75,5,budget
+HT0059,New York Budget Inn,New York,3.3,61.1,12,budget
+HT0060,New York Central Hotel,New York,4.5,106.76,17,mid-range
+HT0061,New York Plaza Hotel,New York,4.3,132.41,15,mid-range
+HT0062,New York Riverside Hotel,New York,4.2,176.72,8,mid-range
+HT0063,New York Luxury Collection,New York,4.6,503.13,14,luxury
+HT0064,New York Skyline Resort,New York,4.9,667.44,3,luxury
+HT0065,San Francisco Budget Inn,San Francisco,3.5,92.04,1,budget
+HT0066,San Francisco Value Stay,San Francisco,3.1,43.73,12,budget
+HT0067,San Francisco City Hostel,San Francisco,3.7,83.97,7,budget
+HT0068,San Francisco Plaza Hotel,San Francisco,4.0,117.37,13,mid-range
+HT0069,San Francisco Central Hotel,San Francisco,4.5,128.76,18,mid-range
+HT0070,San Francisco Garden Hotel,San Francisco,4.2,202.49,7,mid-range
+HT0071,San Francisco Royal Suites,San Francisco,4.6,354.45,22,luxury
+HT0072,San Francisco Heritage Grand,San Francisco,4.4,572.3,1,luxury
+HT0073,Rome Backpacker Lodge,Rome,4.0,40.53,24,budget
+HT0074,Rome Budget Inn,Rome,3.8,42.61,15,budget
+HT0075,Rome Traveler's Rest,Rome,3.8,36.52,10,budget
+HT0076,Rome Central Hotel,Rome,4.1,132.83,17,mid-range
+HT0077,Rome Riverside Hotel,Rome,4.4,159.06,5,mid-range
+HT0078,Rome Garden Hotel,Rome,4.3,114.83,17,mid-range
+HT0079,Rome Heritage Grand,Rome,4.9,506.5,18,luxury
+HT0080,Rome Skyline Resort,Rome,4.4,459.23,12,luxury
+HT0081,Venice Backpacker Lodge,Venice,3.5,89.52,23,budget
+HT0082,Venice Value Stay,Venice,3.8,69.25,1,budget
+HT0083,Venice Traveler's Rest,Venice,3.8,85.19,2,budget
+HT0084,Venice Boutique House,Venice,4.2,124.53,1,mid-range
+HT0085,Venice Garden Hotel,Venice,4.4,178.73,22,mid-range
+HT0086,Venice Plaza Hotel,Venice,4.5,96.39,22,mid-range
+HT0087,Venice Heritage Grand,Venice,4.5,425.13,9,luxury
+HT0088,Venice Royal Suites,Venice,5.0,502.55,5,luxury
+HT0089,Barcelona Value Stay,Barcelona,3.2,40.04,16,budget
+HT0090,Barcelona City Hostel,Barcelona,3.9,46.87,14,budget
+HT0091,Barcelona Budget Inn,Barcelona,3.2,46.78,13,budget
+HT0092,Barcelona Boutique House,Barcelona,4.1,146.38,13,mid-range
+HT0093,Barcelona Garden Hotel,Barcelona,4.2,165.89,21,mid-range
+HT0094,Barcelona Riverside Hotel,Barcelona,4.4,111.87,1,mid-range
+HT0095,Barcelona Grand Palace Hotel,Barcelona,4.8,260.91,3,luxury
+HT0096,Barcelona Royal Suites,Barcelona,4.5,532.33,20,luxury
+HT0097,Madrid Traveler's Rest,Madrid,3.2,35.77,16,budget
+HT0098,Madrid Value Stay,Madrid,3.4,40.04,21,budget
+HT0099,Madrid City Hostel,Madrid,3.1,66.26,19,budget
+HT0100,Madrid Boutique House,Madrid,4.1,113.49,23,mid-range
+HT0101,Madrid Plaza Hotel,Madrid,4.3,92.73,25,mid-range
+HT0102,Madrid Riverside Hotel,Madrid,4.5,100.82,23,mid-range
+HT0103,Madrid Skyline Resort,Madrid,4.9,242.39,24,luxury
+HT0104,Madrid Grand Palace Hotel,Madrid,4.8,556.13,24,luxury
+HT0105,Singapore City Hostel,Singapore,3.1,80.66,20,budget
+HT0106,Singapore Value Stay,Singapore,3.2,92.73,22,budget
+HT0107,Singapore Backpacker Lodge,Singapore,3.8,42.13,19,budget
+HT0108,Singapore Boutique House,Singapore,4.4,109.75,1,mid-range
+HT0109,Singapore Riverside Hotel,Singapore,4.1,137.05,1,mid-range
+HT0110,Singapore Garden Hotel,Singapore,3.9,210.3,15,mid-range
+HT0111,Singapore Royal Suites,Singapore,4.8,633.96,23,luxury
+HT0112,Singapore Grand Palace Hotel,Singapore,4.6,273.22,18,luxury
+HT0113,Bangkok Backpacker Lodge,Bangkok,3.7,35.77,20,budget
+HT0114,Bangkok Budget Inn,Bangkok,3.8,45.11,15,budget
+HT0115,Bangkok Value Stay,Bangkok,4.0,22.65,25,budget
+HT0116,Bangkok Garden Hotel,Bangkok,4.2,123.11,25,mid-range
+HT0117,Bangkok Central Hotel,Bangkok,3.9,90.23,7,mid-range
+HT0118,Bangkok Riverside Hotel,Bangkok,4.1,82.7,2,mid-range
+HT0119,Bangkok Skyline Resort,Bangkok,5.0,215.18,3,luxury
+HT0120,Bangkok Royal Suites,Bangkok,4.6,335.16,5,luxury
+HT0121,Phuket Traveler's Rest,Phuket,3.7,27.11,18,budget
+HT0122,Phuket Budget Inn,Phuket,3.9,47.37,15,budget
+HT0123,Phuket Backpacker Lodge,Phuket,4.0,27.47,17,budget
+HT0124,Phuket Riverside Hotel,Phuket,4.3,116.41,24,mid-range
+HT0125,Phuket Garden Hotel,Phuket,4.4,55.98,23,mid-range
+HT0126,Phuket Plaza Hotel,Phuket,4.4,62.93,23,mid-range
+HT0127,Phuket Grand Palace Hotel,Phuket,4.8,221.58,14,luxury
+HT0128,Phuket Heritage Grand,Phuket,4.6,340.49,13,luxury
+HT0129,Sydney Budget Inn,Sydney,3.4,67.41,2,budget
+HT0130,Sydney Traveler's Rest,Sydney,3.4,63.99,6,budget
+HT0131,Sydney Backpacker Lodge,Sydney,3.4,57.37,7,budget
+HT0132,Sydney Riverside Hotel,Sydney,4.1,134.38,12,mid-range
+HT0133,Sydney Plaza Hotel,Sydney,4.5,124.37,22,mid-range
+HT0134,Sydney Garden Hotel,Sydney,4.4,177.03,22,mid-range
+HT0135,Sydney Royal Suites,Sydney,4.6,281.71,22,luxury
+HT0136,Sydney Skyline Resort,Sydney,4.5,505.08,17,luxury
+HT0137,Melbourne City Hostel,Melbourne,3.2,84.23,1,budget
+HT0138,Melbourne Value Stay,Melbourne,3.3,78.42,6,budget
+HT0139,Melbourne Backpacker Lodge,Melbourne,3.1,95.02,16,budget
+HT0140,Melbourne Garden Hotel,Melbourne,4.4,143.47,15,mid-range
+HT0141,Melbourne Riverside Hotel,Melbourne,4.2,175.91,10,mid-range
+HT0142,Melbourne Plaza Hotel,Melbourne,4.3,128.36,18,mid-range
+HT0143,Melbourne Grand Palace Hotel,Melbourne,4.5,647.97,20,luxury
+HT0144,Melbourne Royal Suites,Melbourne,4.5,488.57,21,luxury
+HT0145,Dubai Value Stay,Dubai,3.8,57.94,20,budget
+HT0146,Dubai Backpacker Lodge,Dubai,4.0,51.05,21,budget
+HT0147,Dubai City Hostel,Dubai,3.5,82.36,18,budget
+HT0148,Dubai Riverside Hotel,Dubai,4.4,120.1,24,mid-range
+HT0149,Dubai Garden Hotel,Dubai,4.4,222.95,10,mid-range
+HT0150,Dubai Boutique House,Dubai,4.4,109.76,9,mid-range
+HT0151,Dubai Grand Palace Hotel,Dubai,4.6,452.25,14,luxury
+HT0152,Dubai Heritage Grand,Dubai,4.9,603.42,16,luxury
+HT0153,Abu Dhabi Budget Inn,Abu Dhabi,3.7,68.0,11,budget
+HT0154,Abu Dhabi Traveler's Rest,Abu Dhabi,3.1,60.0,10,budget
+HT0155,Abu Dhabi Value Stay,Abu Dhabi,3.1,100.47,25,budget
+HT0156,Abu Dhabi Central Hotel,Abu Dhabi,4.3,109.6,8,mid-range
+HT0157,Abu Dhabi Plaza Hotel,Abu Dhabi,4.2,110.44,22,mid-range
+HT0158,Abu Dhabi Riverside Hotel,Abu Dhabi,4.3,125.82,16,mid-range
+HT0159,Abu Dhabi Luxury Collection,Abu Dhabi,4.6,634.47,5,luxury
+HT0160,Abu Dhabi Royal Suites,Abu Dhabi,4.4,595.41,10,luxury
+HT0161,Delhi Backpacker Lodge,Delhi,3.5,34.41,2,budget
+HT0162,Delhi City Hostel,Delhi,3.9,21.79,14,budget
+HT0163,Delhi Budget Inn,Delhi,3.2,31.73,24,budget
+HT0164,Delhi Boutique House,Delhi,4.2,123.78,10,mid-range
+HT0165,Delhi Plaza Hotel,Delhi,4.4,73.99,4,mid-range
+HT0166,Delhi Riverside Hotel,Delhi,4.6,88.15,14,mid-range
+HT0167,Delhi Grand Palace Hotel,Delhi,4.5,241.8,6,luxury
+HT0168,Delhi Skyline Resort,Delhi,4.4,120.48,16,luxury
+HT0169,Jaipur Budget Inn,Jaipur,4.0,30.47,7,budget
+HT0170,Jaipur Value Stay,Jaipur,3.4,22.79,21,budget
+HT0171,Jaipur Backpacker Lodge,Jaipur,3.0,29.38,9,budget
+HT0172,Jaipur Garden Hotel,Jaipur,4.3,145.65,14,mid-range
+HT0173,Jaipur Plaza Hotel,Jaipur,4.5,99.92,2,mid-range
+HT0174,Jaipur Central Hotel,Jaipur,4.3,70.96,15,mid-range
+HT0175,Jaipur Luxury Collection,Jaipur,4.5,250.26,17,luxury
+HT0176,Jaipur Grand Palace Hotel,Jaipur,4.5,140.43,3,luxury
+HT0177,Mumbai Traveler's Rest,Mumbai,3.7,19.11,21,budget
+HT0178,Mumbai Value Stay,Mumbai,3.1,21.75,22,budget
+HT0179,Mumbai City Hostel,Mumbai,3.2,39.8,19,budget
+HT0180,Mumbai Garden Hotel,Mumbai,4.1,105.77,16,mid-range
+HT0181,Mumbai Boutique House,Mumbai,4.4,98.12,17,mid-range
+HT0182,Mumbai Central Hotel,Mumbai,4.1,58.81,7,mid-range
+HT0183,Mumbai Skyline Resort,Mumbai,4.7,290.5,19,luxury
+HT0184,Mumbai Royal Suites,Mumbai,4.9,290.62,21,luxury
