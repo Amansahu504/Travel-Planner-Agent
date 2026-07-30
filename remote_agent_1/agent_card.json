@@ -1,0 +1,109 @@
+{
+  "capabilities": {
+    "streaming": true
+  },
+  "defaultInputModes": [
+    "text",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text",
+    "text/plain"
+  ],
+  "description": "LangGraph-based travel research and itinerary planning agent. Uses corrective retrieval-augmented generation over destination knowledge (MCP Server 1) and travel policy resources (MCP Server 3), with web search fallback, arithmetic budget validation, and a self-reflective critic/revision loop.",
+  "name": "Travel Intelligence Agent",
+  "preferredTransport": "JSONRPC",
+  "protocolVersion": "0.3.0",
+  "skills": [
+    {
+      "description": "Researches destinations using retrieval over travel knowledge documents covering attractions, food, culture, transport, safety, weather, and local customs.",
+      "examples": [
+        "What are the best cultural activities in Kyoto?",
+        "Tell me about getting around London.",
+        "What should I know about local customs in Dubai?"
+      ],
+      "id": "destination_research",
+      "name": "Destination Research",
+      "tags": [
+        "destination",
+        "research",
+        "rag",
+        "travel"
+      ]
+    },
+    {
+      "description": "Builds day-by-day itineraries optimised for budget, pace, geographic proximity, and traveller interests, with a morning/afternoon/evening structure and per-day cost estimates.",
+      "examples": [
+        "Plan a 7-day trip to Japan for 2 people with a budget of $3,000.",
+        "Plan a 5-day trip to Paris. I love museums and food but not nightlife."
+      ],
+      "id": "itinerary_planning",
+      "name": "Itinerary Planning",
+      "tags": [
+        "itinerary",
+        "planning",
+        "trip",
+        "schedule"
+      ]
+    },
+    {
+      "description": "Recommends activities, food, and accommodation styles matched to stated interests and travel pace.",
+      "examples": [
+        "Recommend food experiences in Osaka for a vegetarian traveller.",
+        "What relaxed activities suit a family trip to Singapore?"
+      ],
+      "id": "travel_recommendation",
+      "name": "Travel Recommendation",
+      "tags": [
+        "recommendation",
+        "activities",
+        "food"
+      ]
+    },
+    {
+      "description": "Retrieves relevant demo travel policy documents (visa, passport, insurance, baggage, cancellation, refunds) and explains them in context.",
+      "examples": [
+        "What passport validity do I need?",
+        "Explain the hotel cancellation terms for my trip."
+      ],
+      "id": "travel_policy_lookup",
+      "name": "Travel Policy Lookup",
+      "tags": [
+        "policy",
+        "visa",
+        "cancellation",
+        "insurance"
+      ]
+    },
+    {
+      "description": "Grounds every answer in retrieved context, grades retrieval relevance, and falls back to web search with query rewriting when internal knowledge is insufficient.",
+      "examples": [
+        "Find information about typhoon season risk in Tokyo in October."
+      ],
+      "id": "travel_rag",
+      "name": "Corrective Retrieval-Augmented Generation",
+      "tags": [
+        "rag",
+        "retrieval",
+        "grounding",
+        "web-search"
+      ]
+    },
+    {
+      "description": "Validates the itinerary budget arithmetically, critiques the plan against the request, and revises it (up to a capped number of attempts) including budget optimisation.",
+      "examples": [
+        "Plan a trip to London for $2,000 and optimise it if it exceeds my budget."
+      ],
+      "id": "self_reflective_planning",
+      "name": "Self-Reflective Planning",
+      "tags": [
+        "critic",
+        "self-reflection",
+        "budget",
+        "optimisation"
+      ]
+    }
+  ],
+  "url": "http://127.0.0.1:9001",
+  "version": "1.0.0"
+}
