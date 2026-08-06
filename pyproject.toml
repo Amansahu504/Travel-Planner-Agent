@@ -1,0 +1,46 @@
+[project]
+name = "travel-agentic-ecosystem"
+version = "0.1.0"
+description = "Intelligent Multi-Agent Travel Planning Ecosystem (Google ADK + A2A + LangGraph + Agno + MCP)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "a2a-sdk>=0.3.4,<1.0",
+    "agno>=2.8.2",
+    "chromadb>=1.5.9",
+    "filelock>=3.32.0",
+    "google-adk>=2.5.0",
+    "google-genai>=2.14.0",
+    "gradio>=6.20.0",
+    "httpx>=0.28.1",
+    "langchain>=1.3.14",
+    "langchain-google-genai>=4.3.1",
+    "langchain-mcp-adapters>=0.3.0",
+    "langchain-text-splitters>=1.1.2",
+    "langgraph>=1.2.9",
+    "mcp[cli]>=1.28.1",
+    "pandas>=3.0.5",
+    "pydantic>=2.9.0",
+    "python-dotenv>=1.2.2",
+    "tavily-python>=0.7.26",
+    # Pins below keep chromadb's telemetry stack self-consistent. Without them
+    # the resolver can pick opentelemetry-exporter-otlp-proto-grpc 1.11.x with
+    # protobuf 7, which crashes on import ("Descriptors cannot be created
+    # directly").
+    "opentelemetry-exporter-otlp-proto-grpc>=1.42.1",
+    "opentelemetry-proto>=1.42.1",
+    "protobuf>=6.33,<7",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
