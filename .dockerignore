@@ -1,0 +1,25 @@
+# Keep the build context small and reproducible.
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Secrets never go in the image (compose injects env at runtime).
+.env
+
+# Runtime data is provided via the ./data volume mount, not baked in.
+data/chroma/
+data/travel.db
+*.lock
+!uv.lock
+
+# VCS / editor / docs noise
+.git/
+.gitignore
+*.md
+!README.md
+docs/
+showcase.html
+node_modules/
+.DS_Store
+Thumbs.db

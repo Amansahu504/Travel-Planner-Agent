@@ -1,0 +1,170 @@
+# Docker Compose deployment for the multi-agent travel planning ecosystem.
+#
+# First run (one-off: generates demo data and builds the vector DB):
+#   docker compose --profile init up data-init
+#
+# Then start everything:
+#   docker compose up --build
+#   open http://localhost:7860
+#
+# Every service resolves its peers by docker service name via the *_URL
+# environment variables — never localhost.
+
+x-common-env: &common-env
+  GOOGLE_API_KEY: ${GOOGLE_API_KEY:?set GOOGLE_API_KEY in .env}
+  GOOGLE_GENAI_USE_VERTEXAI: "FALSE"
+  TAVILY_API_KEY: ${TAVILY_API_KEY:-}
+  LLM_MODEL: ${LLM_MODEL:-gemini-flash-lite-latest}
+  LLM_MODEL_PRO: ${LLM_MODEL_PRO:-gemini-flash-lite-latest}
+  EMBED_MODEL: ${EMBED_MODEL:-models/gemini-embedding-001}
+  # Duffel flights (test mode). Without a key, flights fall back to sample data.
+  DUFFEL_API_KEY: ${DUFFEL_API_KEY:-}
+  FLIGHT_PROVIDER: ${FLIGHT_PROVIDER:-auto}
+  DUFFEL_VERSION: ${DUFFEL_VERSION:-v2}
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+  HOST: 0.0.0.0
+  # Peer addresses by service name (MCP endpoints mount under /mcp).
+  MCP1_URL: http://mcp-server-1:8001/mcp
+  MCP2_URL: http://mcp-server-2:8002/mcp
+  MCP3_URL: http://mcp-server-3:8003/mcp
+  RAG_AGENT_URL: http://remote-agent-1:9001
+  WORKFLOW_AGENT_URL: http://remote-agent-2:9002
+
+x-common: &common
+  build:
+    context: .
+  image: travel-agentic-ecosystem:latest
+  restart: unless-stopped
+  volumes:
+    # Shared demo data: knowledge docs, policies, CSV seed, Chroma, SQLite.
+    - ./data:/app/data
+  networks:
+    - travel-net
+
+services:
+  # ---- one-off data preparation (profile: init) ----
+  data-init:
+    <<: *common
+    profiles: ["init"]
+    restart: "no"
+    command: >
+      sh -c "python -m scripts.generate_data &&
+             python -m scripts.generate_policies &&
+             python -m ingest.build_vectordb"
+
+  # ---- MCP servers ----
+  mcp-server-1:
+    <<: *common
+    container_name: travel-mcp-1
+    environment:
+      <<: *common-env
+      MCP1_PORT: 8001
+    command: ["python", "-m", "mcp_server_1.main"]
+    ports:
+      - "${MCP1_PORT:-8001}:8001"
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import socket,sys; s=socket.socket(); sys.exit(s.connect_ex(('127.0.0.1',8001)))"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  mcp-server-2:
+    <<: *common
+    container_name: travel-mcp-2
+    environment:
+      <<: *common-env
+      MCP2_PORT: 8002
+    command: ["python", "-m", "mcp_server_2.main"]
+    ports:
+      - "${MCP2_PORT:-8002}:8002"
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import socket,sys; s=socket.socket(); sys.exit(s.connect_ex(('127.0.0.1',8002)))"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  mcp-server-3:
+    <<: *common
+    container_name: travel-mcp-3
+    environment:
+      <<: *common-env
+      MCP3_PORT: 8003
+    command: ["python", "-m", "mcp_server_3.main"]
+    ports:
+      - "${MCP3_PORT:-8003}:8003"
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import socket,sys; s=socket.socket(); sys.exit(s.connect_ex(('127.0.0.1',8003)))"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # ---- A2A remote agents ----
+  remote-agent-1:
+    <<: *common
+    container_name: travel-agent-1
+    environment:
+      <<: *common-env
+      RAG_AGENT_PORT: 9001
+    command: ["python", "-m", "remote_agent_1.main"]
+    ports:
+      - "${RAG_AGENT_PORT:-9001}:9001"
+    depends_on:
+      mcp-server-1:
+        condition: service_healthy
+      mcp-server-3:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request as u; u.urlopen('http://127.0.0.1:9001/.well-known/agent-card.json', timeout=5)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  remote-agent-2:
+    <<: *common
+    container_name: travel-agent-2
+    environment:
+      <<: *common-env
+      WORKFLOW_AGENT_PORT: 9002
+    command: ["python", "-m", "remote_agent_2.main"]
+    ports:
+      - "${WORKFLOW_AGENT_PORT:-9002}:9002"
+    depends_on:
+      mcp-server-2:
+        condition: service_healthy
+      mcp-server-3:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request as u; u.urlopen('http://127.0.0.1:9002/.well-known/agent-card.json', timeout=5)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # ---- host router + UI ----
+  host-agent:
+    <<: *common
+    container_name: travel-host
+    environment:
+      <<: *common-env
+      UI_PORT: 7860
+    command: ["python", "-m", "host_agent.main"]
+    ports:
+      - "${UI_PORT:-7860}:7860"
+    depends_on:
+      remote-agent-1:
+        condition: service_healthy
+      remote-agent-2:
+        condition: service_healthy
+
+networks:
+  travel-net:
+    driver: bridge
