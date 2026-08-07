@@ -1,0 +1,543 @@
+<title>Multi-Agent Travel Planner — System Overview</title>
+<style>
+  :root {
+    /* dark = primary "ops board" world */
+    --ground:   #0d1420;
+    --surface:  #141d2c;
+    --surface2: #1b2638;
+    --line:     #27354c;
+    --ink:      #e9eef6;
+    --muted:    #93a3bd;
+    --faint:    #6b7c98;
+    --amber:    #f0a92b;
+    --teal:     #35c0ac;
+    --coral:    #f47064;
+    --mono: ui-monospace, "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --maxw: 1000px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ground:   #e7ebf2;
+      --surface:  #ffffff;
+      --surface2: #f2f5fa;
+      --line:     #d3dbe8;
+      --ink:      #14202f;
+      --muted:    #55617a;
+      --faint:    #7d89a1;
+      --amber:    #a86a06;
+      --teal:     #0c8577;
+      --coral:    #c53f2e;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:#0d1420; --surface:#141d2c; --surface2:#1b2638; --line:#27354c;
+    --ink:#e9eef6; --muted:#93a3bd; --faint:#6b7c98;
+    --amber:#f0a92b; --teal:#35c0ac; --coral:#f47064;
+  }
+  :root[data-theme="light"] {
+    --ground:#e7ebf2; --surface:#ffffff; --surface2:#f2f5fa; --line:#d3dbe8;
+    --ink:#14202f; --muted:#55617a; --faint:#7d89a1;
+    --amber:#a86a06; --teal:#0c8577; --coral:#c53f2e;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 600px at 78% -8%, color-mix(in srgb, var(--amber) 9%, transparent), transparent 60%),
+      radial-gradient(1000px 520px at 6% 4%, color-mix(in srgb, var(--teal) 10%, transparent), transparent 55%),
+      var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+  .page { display: flex; flex-direction: column; gap: 76px; padding: 0 0 90px; }
+  section { scroll-margin-top: 24px; }
+
+  /* ---- shared type ---- */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin: 0 0 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before {
+    content: ""; width: 26px; height: 1px; background: var(--amber); opacity: .8;
+  }
+  h1, h2, h3 { text-wrap: balance; line-height: 1.08; margin: 0; }
+  h2 {
+    font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+    font-weight: 800; letter-spacing: -.022em;
+    margin-bottom: 14px;
+  }
+  .lede { color: var(--muted); font-size: 1.05rem; max-width: 64ch; }
+  a { color: var(--teal); }
+
+  /* ================= HERO ================= */
+  .hero { padding-top: 68px; }
+  .hero-tag {
+    font-family: var(--mono); font-size: .74rem; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--muted);
+    display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 26px;
+  }
+  .hero-tag .live {
+    color: var(--coral); display: inline-flex; align-items: center; gap: 7px;
+  }
+  .hero-tag .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--coral);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--coral) 70%, transparent);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--coral) 55%, transparent); }
+    70%  { box-shadow: 0 0 0 9px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+  @media (prefers-reduced-motion: reduce) { .hero-tag .dot { animation: none; } }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 6.4vw, 4.1rem);
+    font-weight: 800; letter-spacing: -.035em;
+    margin-bottom: 20px;
+  }
+  .hero h1 .thin { color: var(--muted); font-weight: 500; }
+  .hero h1 .mark { color: var(--amber); }
+  .hero-lede { font-size: clamp(1.05rem, 2vw, 1.28rem); color: var(--muted); max-width: 60ch; }
+  .hero-lede strong { color: var(--ink); font-weight: 650; }
+
+  /* boarding-pass metric strip */
+  .strip {
+    margin-top: 40px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--surface) 70%, transparent);
+    backdrop-filter: blur(6px);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    overflow: hidden;
+  }
+  .stat { padding: 18px 16px; border-left: 1px dashed var(--line); }
+  .stat:first-child { border-left: none; }
+  .stat .n {
+    font-family: var(--mono); font-weight: 700;
+    font-size: 1.5rem; letter-spacing: -.02em; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat .n .u { color: var(--amber); }
+  .stat .k {
+    font-family: var(--mono); font-size: .64rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--faint); margin-top: 6px;
+  }
+  @media (max-width: 720px) { .strip { grid-template-columns: repeat(3, 1fr); }
+    .stat:nth-child(4) { border-left: none; } }
+  @media (max-width: 420px) { .strip { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ================= ROUTING BOARD ================= */
+  .board {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--surface) 60%, transparent), color-mix(in srgb, var(--ground) 40%, transparent));
+    padding: 34px 24px 30px;
+    overflow-x: auto;
+  }
+  .flow { min-width: 620px; display: flex; flex-direction: column; align-items: center; }
+  .tier { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; width: 100%; }
+
+  .node {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    padding: 13px 16px;
+    min-width: 150px; max-width: 230px; flex: 1;
+    transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+  }
+  .node:hover { transform: translateY(-3px); border-color: var(--accent, var(--teal));
+    box-shadow: 0 12px 26px -16px rgba(0,0,0,.6); }
+  .node .code {
+    font-family: var(--mono); font-size: .64rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--faint);
+    display: flex; align-items: center; gap: 8px; margin-bottom: 7px;
+  }
+  .node .code::before {
+    content: ""; width: 7px; height: 7px; border-radius: 2px;
+    background: var(--accent, var(--teal));
+  }
+  .node .name { font-weight: 700; font-size: .98rem; letter-spacing: -.01em; }
+  .node .desc { color: var(--muted); font-size: .8rem; margin-top: 3px; }
+
+  .node.host   { --accent: var(--amber); min-width: 300px; max-width: 340px; flex: 0 1 auto; text-align: left; }
+  .node.you    { --accent: var(--muted); min-width: 300px; max-width: 340px; flex: 0 1 auto; }
+  .node.agent  { --accent: var(--teal); }
+  .node.mcp    { --accent: #6f8bd6; }
+  .node.data   { --accent: var(--faint); background: color-mix(in srgb, var(--surface) 55%, transparent); }
+  .node.data .name { font-size: .86rem; }
+  .node.live   { --accent: var(--coral); }
+  .node.live .code { color: var(--coral); }
+
+  /* connector between tiers */
+  .link {
+    height: 40px; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .link::before {
+    content: ""; position: absolute; top: 0; bottom: 0; left: 50%;
+    width: 1px; background: linear-gradient(var(--line), var(--accent, var(--teal)));
+  }
+  .link .lbl {
+    position: relative; z-index: 1;
+    font-family: var(--mono); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--muted); background: var(--ground);
+    border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px;
+  }
+  .link.a2a { --accent: var(--teal); }
+  .link.a2a .lbl { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 45%, var(--line)); }
+  .link.mcp { --accent: #6f8bd6; }
+  .link.mcp .lbl { color: #8aa0e0; border-color: color-mix(in srgb, #6f8bd6 45%, var(--line)); }
+
+  .board-note {
+    font-family: var(--mono); font-size: .72rem; color: var(--faint);
+    text-align: center; margin-top: 22px; letter-spacing: .02em;
+  }
+  .board-note b { color: var(--amber); font-weight: 600; }
+
+  /* ================= SEQUENCE ================= */
+  .steps { display: flex; flex-direction: column; gap: 2px; border-left: 2px solid var(--line); margin-left: 6px; }
+  .step { display: grid; grid-template-columns: 54px 1fr; gap: 18px; padding: 14px 0 14px 22px; position: relative; }
+  .step::before {
+    content: ""; position: absolute; left: -7px; top: 20px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--ground); border: 2px solid var(--teal);
+  }
+  .step.hl::before { border-color: var(--coral); background: var(--coral); }
+  .step .idx {
+    font-family: var(--mono); font-weight: 700; font-size: 1.05rem;
+    color: var(--amber); font-variant-numeric: tabular-nums;
+  }
+  .step .t { font-weight: 650; }
+  .step .d { color: var(--muted); font-size: .92rem; margin-top: 2px; }
+  .step .d code {
+    font-family: var(--mono); font-size: .82em;
+    background: var(--surface2); padding: 1px 6px; border-radius: 5px; color: var(--ink);
+  }
+
+  /* ================= HIGHLIGHTS ================= */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 22px;
+    transition: border-color .16s ease, transform .16s ease;
+  }
+  .card:hover { border-color: color-mix(in srgb, var(--teal) 40%, var(--line)); transform: translateY(-2px); }
+  .card .tag {
+    font-family: var(--mono); font-size: .64rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+  }
+  .card h3 { font-size: 1.06rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: .92rem; margin: 0; }
+
+  /* ================= DATA LEDGER ================= */
+  .ledger { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .row {
+    display: grid; grid-template-columns: 1.4fr auto 2fr;
+    gap: 16px; align-items: center;
+    padding: 15px 20px; border-top: 1px solid var(--line);
+  }
+  .row:first-child { border-top: none; }
+  .row .what { font-weight: 650; }
+  .row .how { color: var(--muted); font-size: .88rem; }
+  .pill {
+    font-family: var(--mono); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 999px; white-space: nowrap; justify-self: start;
+    border: 1px solid transparent;
+  }
+  .pill.live { color: var(--coral); background: color-mix(in srgb, var(--coral) 14%, transparent);
+    border-color: color-mix(in srgb, var(--coral) 35%, transparent); }
+  .pill.real { color: var(--teal); background: color-mix(in srgb, var(--teal) 14%, transparent);
+    border-color: color-mix(in srgb, var(--teal) 35%, transparent); }
+  .pill.sample { color: var(--amber); background: color-mix(in srgb, var(--amber) 14%, transparent);
+    border-color: color-mix(in srgb, var(--amber) 32%, transparent); }
+  @media (max-width: 620px) {
+    .row { grid-template-columns: 1fr auto; }
+    .row .how { grid-column: 1 / -1; }
+  }
+
+  /* ================= STACK ================= */
+  .stack-group { margin-top: 22px; }
+  .stack-group .gk {
+    font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--faint); margin-bottom: 11px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-family: var(--mono); font-size: .8rem;
+    padding: 6px 13px; border-radius: 8px;
+    background: var(--surface); border: 1px solid var(--line); color: var(--ink);
+  }
+  .chip.key { border-color: color-mix(in srgb, var(--amber) 45%, var(--line)); color: var(--amber); }
+
+  /* ================= FOOTER ================= */
+  .foot {
+    border-top: 1px solid var(--line); padding-top: 30px;
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    color: var(--faint); font-family: var(--mono); font-size: .76rem; letter-spacing: .04em;
+  }
+  .foot .disc { max-width: 62ch; line-height: 1.7; }
+
+  /* load-in */
+  .rise { opacity: 0; transform: translateY(14px); animation: rise .6s cubic-bezier(.2,.7,.3,1) forwards; }
+  .rise.d1 { animation-delay: .06s; } .rise.d2 { animation-delay: .13s; } .rise.d3 { animation-delay: .2s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .rise { animation: none; opacity: 1; transform: none; } }
+</style>
+
+<div class="wrap">
+  <div class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-tag rise">
+        <span>Multi-Agent AI System</span>
+        <span>·</span>
+        <span>Python 3.12</span>
+        <span>·</span>
+        <span class="live"><span class="dot"></span>Live flight booking</span>
+      </div>
+      <h1 class="rise d1">
+        A travel planner that <span class="mark">routes</span> your request<br>
+        <span class="thin">across a team of specialist AI agents.</span>
+      </h1>
+      <p class="hero-lede rise d2">
+        You just chat. Behind the screen, a host agent <strong>delegates</strong> the
+        request over a real agent-to-agent protocol — one agent researches and
+        writes a day-by-day itinerary, another searches and books flights — then
+        their answers are <strong>recombined into one reply</strong>. It grounds
+        itself in retrieved facts, checks its own budget maths, and critiques and
+        revises the plan before you see it.
+      </p>
+
+      <div class="strip rise d3">
+        <div class="stat"><div class="n">6</div><div class="k">Services</div></div>
+        <div class="stat"><div class="n">3</div><div class="k">Protocols</div></div>
+        <div class="stat"><div class="n">197</div><div class="k">Tests pass</div></div>
+        <div class="stat"><div class="n">253</div><div class="k">Vector chunks</div></div>
+        <div class="stat"><div class="n">1<span class="u">×</span></div><div class="k">Live API</div></div>
+        <div class="stat"><div class="n">0<span class="u">$</span></div><div class="k">Real payments</div></div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section>
+      <p class="eyebrow">Architecture</p>
+      <h2>Four tiers, one rule: the host never touches a tool.</h2>
+      <p class="lede" style="margin-bottom:30px;">
+        The host only <em>delegates</em> to agents; agents never call each other.
+        That separation is what makes this genuine multi-agent orchestration rather
+        than one large chatbot.
+      </p>
+
+      <div class="board">
+        <div class="flow">
+          <div class="tier">
+            <div class="node you">
+              <div class="code">You · Browser</div>
+              <div class="name">Chat UI</div>
+              <div class="desc">Natural language in, one clear answer out · Gradio :7860</div>
+            </div>
+          </div>
+
+          <div class="link"><span class="lbl">chat</span></div>
+
+          <div class="tier">
+            <div class="node host">
+              <div class="code">Router · Gate&nbsp;00</div>
+              <div class="name">Host / Router Agent</div>
+              <div class="desc">Google ADK · reads intent, calls one agent or both, then merges</div>
+            </div>
+          </div>
+
+          <div class="link a2a"><span class="lbl">A2A protocol</span></div>
+
+          <div class="tier">
+            <div class="node agent">
+              <div class="code">A1 · Gate&nbsp;9001</div>
+              <div class="name">Travel Intelligence</div>
+              <div class="desc">LangGraph · corrective RAG, itinerary, self-critique</div>
+            </div>
+            <div class="node agent">
+              <div class="code">A2 · Gate&nbsp;9002</div>
+              <div class="name">Travel Operations</div>
+              <div class="desc">Agno · search, budgets, bookings, policies</div>
+            </div>
+          </div>
+
+          <div class="link mcp"><span class="lbl">MCP · streamable http</span></div>
+
+          <div class="tier">
+            <div class="node mcp">
+              <div class="code">KB · Gate&nbsp;8001</div>
+              <div class="name">Knowledge Server</div>
+              <div class="desc">Semantic search over destination guides</div>
+            </div>
+            <div class="node mcp live">
+              <div class="code">OPS · Gate&nbsp;8002</div>
+              <div class="name">Operations Server</div>
+              <div class="desc">Flights (live), hotels, bookings</div>
+            </div>
+            <div class="node mcp">
+              <div class="code">POL · Gate&nbsp;8003</div>
+              <div class="name">Policy Server</div>
+              <div class="desc">Cancellation, visa, baggage docs</div>
+            </div>
+          </div>
+
+          <div class="link"><span class="lbl">data</span></div>
+
+          <div class="tier">
+            <div class="node data"><div class="code">Vectors</div><div class="name">ChromaDB</div><div class="desc">253 embedded chunks</div></div>
+            <div class="node data live"><div class="code">Live + local</div><div class="name">Duffel · SQLite</div><div class="desc">Real flights + records</div></div>
+            <div class="node data"><div class="code">Files</div><div class="name">10 documents</div><div class="desc">Sample policies</div></div>
+          </div>
+        </div>
+        <p class="board-note">
+          Fallbacks everywhere · a <b>Tavily</b> web search backs the knowledge base ·
+          <b>Gemini</b> powers all reasoning &amp; embeddings
+        </p>
+      </div>
+    </section>
+
+    <!-- REQUEST FLOW -->
+    <section>
+      <p class="eyebrow">How a request flows</p>
+      <h2>"Plan 7 days in Japan, find hotels, estimate cost, explain the policy."</h2>
+      <p class="lede" style="margin-bottom:34px;">
+        The single hardest path — one request that needs both specialists at once.
+      </p>
+
+      <div class="steps">
+        <div class="step"><div class="idx">01</div><div><div class="t">Route</div><div class="d">The host reads the request and recognises it spans <em>both</em> planning and operations.</div></div></div>
+        <div class="step"><div class="idx">02</div><div><div class="t">Delegate to both agents in one turn</div><div class="d">Over A2A: the itinerary to Agent&nbsp;1, hotels + budget + policy to Agent&nbsp;2.</div></div></div>
+        <div class="step"><div class="idx">03</div><div><div class="t">Retrieve &amp; ground</div><div class="d">Agent&nbsp;1 pulls destination facts from the knowledge server; grades whether they're good enough; falls back to web search and rewrites its query if not.</div></div></div>
+        <div class="step hl"><div class="idx">04</div><div><div class="t">Validate the budget — in code, not the LLM</div><div class="d">Cost lines are extracted, then <em>summed in Python</em> and compared to the target. The model can't claim a <code>$3,450</code> plan fits <code>$3,000</code>.</div></div></div>
+        <div class="step hl"><div class="idx">05</div><div><div class="t">Critique &amp; revise</div><div class="d">A critic reviews the plan; if it fails, it's revised (this is also the budget optimiser) and re-checked. Capped at 3 rounds so it always finishes.</div></div></div>
+        <div class="step"><div class="idx">06</div><div><div class="t">Merge &amp; return</div><div class="d">The host stitches both agents' replies into one consolidated answer — itinerary, costs, hotels, policy — with sources and assumptions disclosed.</div></div></div>
+      </div>
+    </section>
+
+    <!-- ENGINEERING HIGHLIGHTS -->
+    <section>
+      <p class="eyebrow">What makes it notable</p>
+      <h2>The decisions behind the demo.</h2>
+      <div class="grid" style="margin-top:26px;">
+        <div class="card">
+          <div class="tag">Correctness</div>
+          <h3>Budget maths in Python</h3>
+          <p>LLMs happily declare over-budget trips "within budget." Totals are computed deterministically in code, and the critic is told to trust that verdict — so the plan is always internally consistent.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Reliability</div>
+          <h3>Three loop caps</h3>
+          <p>An agent that revises its own work can loop forever. Independent limits on retrieval retries, revision rounds, and graph recursion guarantee it always terminates and discloses any open issues.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Extensibility</div>
+          <h3>Swappable flight provider</h3>
+          <p>A provider interface behind the booking tools made live Duffel a drop-in: real search + booking when a key is set, automatic fallback to sample data otherwise. The agents never know which is active.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Retrieval</div>
+          <h3>Corrective RAG</h3>
+          <p>A 12-node LangGraph pipeline grades its own retrieval, falls back to web search, and rewrites weak queries — grounding every recommendation in a real source rather than guessing.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Resilience</div>
+          <h3>Free-tier survival</h3>
+          <p>Gemini caps embeddings at 100/min. The vector build is throttled, resumable, and every model call retries with exponential backoff, so a rate-limit spike never sinks the run.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Delivery</div>
+          <h3>Tested &amp; shippable</h3>
+          <p>~200 automated tests (unit + live integration), Docker Compose with service-name networking and health-gated startup, structured logging, and a one-command local launcher.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA LEDGER -->
+    <section>
+      <p class="eyebrow">Real vs sample data — stated honestly</p>
+      <h2>What's live, what's synthetic, and why.</h2>
+      <p class="lede" style="margin-bottom:26px;">
+        Flights are genuinely booked live in a safe test mode. Hotels stay
+        synthetic on purpose — there is no free hotel-booking API; every real one
+        needs a commercial contract.
+      </p>
+
+      <div class="ledger">
+        <div class="row"><div class="what">Flight search &amp; booking</div><span class="pill live">Live · test mode</span><div class="how">Duffel API — real airlines, real prices, real airline references, no payment, no seat held</div></div>
+        <div class="row"><div class="what">LLM reasoning &amp; embeddings</div><span class="pill real">Real</span><div class="how">Google Gemini — routing, parsing, writing, critique, and vector embeddings</div></div>
+        <div class="row"><div class="what">Web search fallback</div><span class="pill real">Real</span><div class="how">Tavily — used only when the internal knowledge base falls short</div></div>
+        <div class="row"><div class="what">Destination knowledge</div><span class="pill sample">Sample</span><div class="how">23 curated city guides, embedded into 253 searchable chunks</div></div>
+        <div class="row"><div class="what">Hotels &amp; activities</div><span class="pill sample">Sample</span><div class="how">368 seeded rows — reproducible, coverage guaranteed per city</div></div>
+        <div class="row"><div class="what">Travel policies</div><span class="pill sample">Sample</span><div class="how">10 fictional documents, clearly labelled, never presented as official</div></div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section>
+      <p class="eyebrow">Built with</p>
+      <h2>Stack.</h2>
+      <div class="stack-group">
+        <div class="gk">Agents &amp; protocols</div>
+        <div class="chips">
+          <span class="chip">Google ADK</span><span class="chip">A2A protocol</span>
+          <span class="chip">LangGraph</span><span class="chip">Agno</span>
+          <span class="chip">MCP</span><span class="chip">LangChain</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="gk">Data &amp; models</div>
+        <div class="chips">
+          <span class="chip key">Gemini</span><span class="chip">ChromaDB</span>
+          <span class="chip">SQLite</span><span class="chip">Pydantic</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="gk">APIs</div>
+        <div class="chips">
+          <span class="chip key">Duffel</span><span class="chip key">Tavily</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="gk">Interface, delivery &amp; tooling</div>
+        <div class="chips">
+          <span class="chip">Gradio</span><span class="chip">Docker</span>
+          <span class="chip">pytest</span><span class="chip">uv</span>
+          <span class="chip">Python 3.12</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <div class="disc">
+        Demonstration project. Flights book live in Duffel <b style="color:var(--coral)">test mode</b> —
+        no money moves and no real seat is held. Hotels, activities, and policies
+        are sample data; policy documents are fictional. Confirm anything real
+        before you travel.
+      </div>
+      <div>Intelligent Multi-Agent Travel Planner</div>
+    </footer>
+
+  </div>
+</div>
